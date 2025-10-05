@@ -1,0 +1,269 @@
+                                 /* Корневые параметры, переменные */
+* {
+  margin: 0;
+  padding: 0;
+}
+                                 :root {
+   font-size: 15px;
+ --primary-color: #00000080;
+ --white-color: rgba(255, 255, 255, 0.966);
+}
+
+                                 /* Body */
+body {
+   background-color: #f5f5f5;
+   max-width: 210mm;
+   font-family: 'Open Sans';
+   margin: 0;
+   padding: 36px;
+   margin-left: auto;
+   margin-right: auto;   
+   /*border: 1px solid;*/
+}
+                                 /* Контейнер */
+.container {
+   padding: 16px;
+   background-color: #ffffff;
+   border-radius: 16px;
+   box-shadow: 0 2px 7px 1px rgb(0 0 0 / 26%);
+}
+                                 /* Верхушка, настройки странички */
+.page-settings {
+   margin: 0;
+   padding: 8px;
+   display: flex;
+   flex-direction: row;
+   border: 2px solid #00000050;
+    border-radius: 8px;
+}
+                                 /* Блок транспонирования */
+div.transpose-controls {
+   margin-left: auto;
+   }
+
+button#transpose-down, button#print  {
+border-radius: 8px 0 0 8px;
+   }
+
+button#transpose-up {
+   border-radius: 0 8px 8px 0;
+   }
+
+button:active {
+ transform: scale(0.95);
+   }
+
+.transpose-controls div {
+   display: inline-block;
+   text-align: center;
+   background-color: var(--primary-color);
+   color: aliceblue;
+   padding: 1em 0 1em 0;
+   min-width: 65px;
+}
+
+button#transpose-down,
+button#transpose-up,
+button#print 
+{
+
+ margin: auto;
+ padding: 1em 1em 1em 1em;
+ border: none;
+ background-color: var(--primary-color);
+ color: rgb(255, 255, 255);
+ transition: all 0.1s linear;
+ font-family: inherit;
+ font-size: 1em;
+ min-width: 65px;
+}
+
+.header {
+   margin: 1em;
+}
+                                 /* Название песни */                           
+h1 {
+
+}
+                                 /* Нотный стан*/
+.treble-staff {
+   margin: 1rem 0;
+   display: none;
+}
+.treble-staff::before {
+   content: url(res/Treble_clef_1.svg);
+   display: block;
+   height: 50px;
+   width: 34px;
+   position: absolute;
+   translate: 2px -12px;
+}
+
+.line1,
+.line2,
+.line3,
+.line4,
+.line5
+ {
+    height: 0px;
+    width: auto;
+    background-color: black;
+    border: 0.5px solid black;
+    margin: 7px 0;
+}
+                                 /* Блок инфо на странице песни */
+.info-block {
+ display: none;
+}
+                                 /* Настройки строк */
+.line {
+   margin: 1.5em 0 1em 0;
+   padding: 0;
+}
+                                 /* Заголовки блоков */
+.section-header {
+   line-height: 1;
+   text-transform: uppercase;
+   font-weight: 700;
+   position: absolute;
+   transform: translate(0rem, -1.25rem);
+   padding: 0rem 1rem;
+   background: white;
+}
+                                  /* Комментарии блоков */
+.comment {
+   line-height: 1.2rem;
+   font-size: 0.8em;
+   font-weight: 600;
+   color: #00000070;;
+   text-align: right;
+}
+                                 /* Аккорды */
+span.chord {
+   position: absolute;
+   transform: translate(0rem, -1.2rem);
+   font-weight: 600;
+   color: black;
+}
+                                 /* Позиционирование аккордов без слов */
+.INTRO > .text-lines > .line > .chord,
+.INSTRUMENTAL > .text-lines > .line > .chord
+   {
+   background-color: #ff000000;
+   position: relative;
+}
+                                 /* Настройки блоков */
+.section {
+   line-height: 1rem;
+   padding: 1rem 1rem 0rem 1rem;
+   border: 2px solid #00000050;
+   border-radius: 16px;
+   margin-bottom: 1rem;
+   break-inside: avoid;
+}
+
+                                 /* сброс отступов сверху у блоков текста*/
+.comment + .text-lines,
+.INTRO > .text-lines > .line,
+.INSTRUMENTAL > .text-lines > .line
+   {
+   margin: 0.5em 0 1em 0;
+}
+                                 /* Колонка */
+.song-wrapper {
+
+   columns: 2;
+   column-gap: 1rem;                          
+}                         
+.column-wrapper {
+   max-width: fit-content;
+}
+
+
+                                 /* Параметры страницы на печать */
+@media print {
+   @page {
+    /*size: Letter portrait;
+    margin: 0;*/
+   }
+body {
+   background-color: transparent;
+   max-width: 210mm;
+   font-family: 'Open Sans';
+   margin: 0;
+   padding: 0;
+   margin-left: auto;
+   margin-right: auto;   
+}
+.container {
+   background-color: transparent;
+   border-radius: 0;
+   box-shadow: none;
+   outline: none;
+   padding: 0;
+}
+   .song-wrapper {
+   columns: 2;
+   column-gap: 1rem;
+   column-fill: auto;
+   height: auto;
+   }   
+   
+   div.page-settings,
+   .info-block 
+   {
+      display: none !important; /* скрыть настройки на печати*/
+   }
+}
+
+
+/* *********************************************** главная станица */ 
+ul {
+   padding: 0;
+   list-style-type: none;
+}
+
+.song-item, .info-block-index {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.song-item {
+    margin: 1em;
+    padding: 1em;
+    /* border-top: 2px solid #cfcfcf; */
+    background-color: #f1f1f1;
+}
+a.song-link {
+   text-decoration: none;
+   color: #0a0a0a;
+   min-width: fit-content;
+   width: 20%;
+   padding: 1em;
+}
+
+.artist,
+.additional-info,
+.meta-capo
+ {
+   display: none;
+}
+
+.info-block-index span
+{
+   background-color: var(--primary-color);
+   color: var(--white-color);
+   border-radius: 4px;
+   font-size: 0.8em;
+   padding: 0.4em 0.8em;
+   margin: 0.5em;
+}
+
+.last-update {
+   font-size: 0.8em;
+   text-align: center;
+   color: #00000080;
+}
+
