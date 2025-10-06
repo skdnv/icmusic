@@ -1,4 +1,4 @@
-                                 /* Корневые параметры, переменные */
+ь                                 /* Корневые параметры, переменные */
 * {
   margin: 0;
   padding: 0;
@@ -61,7 +61,7 @@ button:active {
    text-align: center;
    background-color: var(--primary-color);
    color: aliceblue;
-   padding: 1em 0 1em 0;
+   padding: 1rem 0 1rem 0;
    min-width: 65px;
 }
 
@@ -71,18 +71,18 @@ button#print
 {
 
  margin: auto;
- padding: 1em 1em 1em 1em;
+ padding: 1rem;
  border: none;
  background-color: var(--primary-color);
  color: rgb(255, 255, 255);
  transition: all 0.1s linear;
  font-family: inherit;
- font-size: 1em;
+ font-size: 1rem;
  min-width: 65px;
 }
 
 .header {
-   margin: 1em;
+   margin: 1rem;
 }
                                  /* Название песни */                           
 h1 {
@@ -120,7 +120,7 @@ h1 {
 }
                                  /* Настройки строк */
 .line {
-   margin: 1.5em 0 1em 0;
+   margin: 1.5rem 0 1rem 0;
    padding: 0;
 }
                                  /* Заголовки блоков */
@@ -136,7 +136,7 @@ h1 {
                                   /* Комментарии блоков */
 .comment {
    line-height: 1.2rem;
-   font-size: 0.8em;
+   font-size: 0.8rem;
    font-weight: 600;
    color: #00000070;;
    text-align: right;
@@ -170,7 +170,7 @@ span.chord {
 .INTRO > .text-lines > .line,
 .INSTRUMENTAL > .text-lines > .line
    {
-   margin: 0.5em 0 1em 0;
+   margin: 0.5rem 0 1rem 0;
 }
                                  /* Колонка */
 .song-wrapper {
@@ -235,8 +235,8 @@ ul {
    flex-direction: row;
    align-items: center;
    justify-content: flex-start;
-   margin: 1em;
-   padding: 1em;
+   margin: 1rem;
+   padding: 1rem;
    /* border-top: 2px solid #cfcfcf; */
    background-color: #f1f1f1;
 }
@@ -245,7 +245,7 @@ a.song-link {
    color: #0a0a0a;
    min-width: fit-content;
    width: 100%;
-   padding: 1em;
+   padding: 1rem;
 }
 
 .artist,
@@ -260,13 +260,13 @@ a.song-link {
    background-color: var(--primary-color);
    color: var(--white-color);
    border-radius: 4px;
-   font-size: 0.8em;
-   padding: 0.4em 0.8em;
-   margin: 0.5em;
+   font-size: 0.8rem;
+   padding: 0.4rem 0.8rem;
+   margin: 0.5rem;
 }
 
 .last-update {
-   font-size: 0.8em;
+   font-size: 0.8rem;
    text-align: center;
    color: #00000080;
 }
@@ -278,7 +278,7 @@ a.song-link {
 @media only screen and (max-width: 640px) {
     body {
         -webkit-text-size-adjust: none;
-       /*background: #ff210099;*/
+        background: #ff210099;
         padding: 8px;
     }
 
@@ -286,6 +286,9 @@ a.song-link {
       columns: 1;
    }
    .container {
+
+
     border-radius: 8px;
+
 }
 }
