@@ -278,7 +278,7 @@ a.song-link {
 @media only screen and (max-width: 640px) {
     body {
         -webkit-text-size-adjust: none;
-        background: #ff210099;
+        background-color: #ff210099;
         padding: 8px;
     }
 
@@ -291,4 +291,5 @@ a.song-link {
     border-radius: 8px;
 
 }
+
 }
