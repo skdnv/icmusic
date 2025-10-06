@@ -7,6 +7,7 @@
    font-size: 15px;
  --primary-color: #00000080;
  --white-color: rgba(255, 255, 255, 0.966);
+ --light-grey: #e9e9e9;
 }
 
 
@@ -14,40 +15,48 @@
 
                                  /* Body */
 body {
+   -webkit-text-size-adjust: none; /* проверить нужно ли*/
    background-color: #f5f5f5;
-   max-width: 210mm;
    font-family: 'Open Sans';
    margin: 0;
-   padding: 36px;
+   padding: 0px;
    margin-left: auto;
    margin-right: auto;   
    /*border: 1px solid;*/
 }
+                                 /* лого на странице песни */
+.header-container.song {
+
+}
                                  /* Контейнер */
 .container {
+   margin-top: 7rem;
    padding: 16px;
+   padding-top: 4rem;
    background-color: #ffffff;
-   border-radius: 16px;
+   border-radius: 0px;
    box-shadow: 0 2px 7px 1px rgb(0 0 0 / 26%);
+}
+.container.song {
+   padding-top: 3rem;
 }
                                  /* Верхушка, настройки странички */
 .page-settings {
    margin: 0;
-   padding: 8px;
    display: flex;
    flex-direction: row;
-   border: 2px solid #00000050;
-    border-radius: 8px;
 }
                                  /* Блок транспонирования */
 div.transpose-controls {
    margin-left: auto;
    }
 
-button#transpose-down, button#print  {
+button#transpose-down  {
 border-radius: 8px 0 0 8px;
    }
-
+button#print {
+   border-radius: 8px;
+}
 button#transpose-up {
    border-radius: 0 8px 8px 0;
    }
@@ -59,31 +68,30 @@ button:active {
 .transpose-controls div {
    display: inline-block;
    text-align: center;
-   background-color: var(--primary-color);
-   color: aliceblue;
+   background-color: var(--light-grey);
    padding: 1rem 0 1rem 0;
    min-width: 65px;
 }
 
 button#transpose-down,
 button#transpose-up,
-button#print 
+button#print,
+.transpose-controls div 
 {
 
  margin: auto;
  padding: 1rem;
  border: none;
- background-color: var(--primary-color);
- color: rgb(255, 255, 255);
+ background-color: var(--light-grey);
  transition: all 0.1s linear;
  font-family: inherit;
  font-size: 1rem;
  min-width: 65px;
+ border: 0.1rem solid #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 16%);
 }
 
-.header {
-   margin: 1rem;
-}
                                  /* Название песни */                           
 h1 {
 
@@ -173,11 +181,10 @@ span.chord {
    margin: 0.5rem 0 1rem 0;
 }
                                  /* Колонка */
-.song-wrapper {
-
-   columns: 2;
-   column-gap: 1rem;                          
-}                         
+                       
+   .song-wrapper {
+      columns: 1;
+   }
 .column-wrapper {
    max-width: fit-content;
 }
@@ -198,12 +205,17 @@ body {
    margin-left: auto;
    margin-right: auto;   
 }
-.container {
+.container,
+.container.song
+ {
    background-color: transparent;
    border-radius: 0;
    box-shadow: none;
    outline: none;
    padding: 0;
+   padding-top: 0;
+   margin-top: 0;
+   margin-bottom: 0;
 }
    .song-wrapper {
    columns: 2;
@@ -213,7 +225,8 @@ body {
    }   
    
    div.page-settings,
-   .info-block 
+   .info-block,
+   .header-container
    {
       display: none !important; /* скрыть настройки на печати*/
    }
@@ -221,9 +234,34 @@ body {
 
 
 /* *********************************************** главная станица */ 
+
+.header-container {
+    position: absolute;
+    border: 2px solid #ffffff;
+    left: calc(50% - 4.5rem);
+    top: 1rem;
+    width: 9rem;
+    height: 9rem;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    color: white;
+    border-radius: 5rem;
+    font-weight: 400;
+    box-shadow: 0px 4px 15px 2px rgb(0 0 0 / 48%);
+}
+
+.header-container > h1 {
+   margin: auto;
+   font-size: 2rem;
+   font-family: igra sans;
+   font-weight: 100;
+}
+
 ul {
    padding: 0;
    list-style-type: none;
+   font-weight: 400;
 }
 
 .info-block-index {
@@ -232,13 +270,15 @@ ul {
 
 .song-item {
    display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: flex-start;
-   margin: 1rem;
-   padding: 1rem;
-   /* border-top: 2px solid #cfcfcf; */
-   background-color: #f1f1f1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #e9e9e9;
+    border: 0.1rem solid #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 16%);
 }
 a.song-link {
    text-decoration: none;
@@ -266,6 +306,7 @@ a.song-link {
 }
 
 .last-update {
+   margin-top: 2rem;
    font-size: 0.8rem;
    text-align: center;
    color: #00000080;
@@ -275,21 +316,37 @@ a.song-link {
 
 
 
-@media only screen and (max-width: 640px) {
+@media only screen and (min-width: 720px) {
     body {
-        -webkit-text-size-adjust: none;
-        /*background-color: #ff210099;*/
-        padding: 8px;
-    }
 
-   .song-wrapper {
-      columns: 1;
-   }
-   .container {
+   max-width: 720px;
 
+   margin: 0;
 
-    border-radius: 8px;
-
+   margin-left: auto;
+   margin-right: auto;   
+   /*border: 1px solid;*/
 }
+   
+   
+   body {
+        -webkit-text-size-adjust: none;
+
+    }
+.container {
+   margin-top: 7rem;
+      margin-bottom: 3rem;
+   padding: 16px;
+   padding-top: 4rem;
+   background-color: #ffffff;
+   border-radius: 0px;
+
+
+   border-radius: 8px;
+   box-shadow: 0 2px 7px 1px rgb(0 0 0 / 26%);
+}
+
+
+
 
 }
