@@ -278,7 +278,7 @@ a.song-link {
 @media only screen and (max-width: 640px) {
     body {
         -webkit-text-size-adjust: none;
-        background-color: #ff210099;
+        /*background-color: #ff210099;*/
         padding: 8px;
     }
 
