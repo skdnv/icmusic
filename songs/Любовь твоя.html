@@ -7,7 +7,8 @@
     <link rel="stylesheet" type="text/css" href="res/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
     <title>Любовь Твоя</title>
-    <script src="res/transposition.js"></script>
+    <script src="script/transposition.js"></script>
+    <script src="script/hide-chords.js"></script>
     
 </head>
 <body>
@@ -18,7 +19,7 @@
             </div>
         </div>
 
-        <div class="header">
+        <div class="title">
             <h1>Любовь Твоя</h1>
             <div class="info-block">
                 <div class="music-info"><span class="meta-language">ru</span></div>
@@ -174,11 +175,16 @@
     </div>
         </div>
                 <div class="page-settings">
-            <a href="javascript:window.print()"><button id="print" title="Отправить на печать">Печать</button></a>
+            <a href="javascript:window.print()"><button id="print" title="Отправить на печать (Ctrl+P)">Печать</button></a>
+            <button id="toggle-chords" title="Переключить отображение аккордов (Ctrl+H)">
+                <div class="toggle-chords-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    Аккорды
+                </div>
+            </button>
+
             <div class="transpose-controls">
-                <button id="transpose-down" title="Понизить на полтона">-</button>
-                <div id="current-key" title="Двойной клик для сброса">0</div>
-                <button id="transpose-up" title="Повысить на полтона">+</button>
+                <button class="transpose" id="transpose-down" title="Понизить на полтона">-</button><button class="transpose" id="current-key" title="Двойной клик для сброса">0</button><button class="transpose" id="transpose-up" title="Повысить на полтона">+</button>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-ь                                 /* Корневые параметры, переменные */
+                              /* Корневые параметры, переменные */
 * {
   margin: 0;
   padding: 0;
@@ -11,8 +11,9 @@
 }
 
 @font-face {
-  font-family: "igra sans";
-  src: url("songs/res/IgraSans.otf")
+  font-family: "bezier";
+  src: 
+   url("songs/res/1.ttf");
 }
 
 
@@ -20,85 +21,32 @@
                                  /* Body */
 body {
    -webkit-text-size-adjust: none; /* проверить нужно ли*/
-   background-color: #f5f5f5;
-   font-family: 'Open Sans';
+   background-color: rgb(243 244 246);
+   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
    margin: 0;
    padding: 0px;
    margin-left: auto;
    margin-right: auto;   
-   /*border: 1px solid;*/
-}
-                                 /* лого на странице песни */
-.header-container.song {
 
 }
+
                                  /* Контейнер */
 .container {
-   margin-top: 7rem;
-   padding: 16px;
-   padding-top: 4rem;
+   margin-top: 5rem;
+   padding: 1rem 1rem 1rem 1rem;
+transition-duration: 150ms;
    background-color: #ffffff;
    border-radius: 0px;
    box-shadow: 0 2px 7px 1px rgb(0 0 0 / 26%);
 }
-.container.song {
-   padding-top: 3rem;
-}
-                                 /* Верхушка, настройки странички */
-.page-settings {
-   margin: 0;
-   display: flex;
-   flex-direction: row;
-}
-                                 /* Блок транспонирования */
-div.transpose-controls {
-   margin-left: auto;
-   }
+.container.index {
 
-button#transpose-down  {
-border-radius: 8px 0 0 8px;
-   }
-button#print {
-   border-radius: 8px;
-}
-button#transpose-up {
-   border-radius: 0 8px 8px 0;
-   }
-
-button:active {
- transform: scale(0.95);
-   }
-
-.transpose-controls div {
-   display: inline-block;
-   text-align: center;
-   background-color: var(--light-grey);
-   padding: 1rem 0 1rem 0;
-   min-width: 65px;
 }
 
-button#transpose-down,
-button#transpose-up,
-button#print,
-.transpose-controls div 
-{
-
- margin: auto;
- padding: 1rem;
- border: none;
- background-color: var(--light-grey);
- transition: all 0.1s linear;
- font-family: inherit;
- font-size: 1rem;
- min-width: 65px;
- border: 0.1rem solid #ffffff;
-    border-radius: 16px;
-    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 16%);
-}
 
                                  /* Название песни */                           
-h1 {
-
+.title {
+   padding: 2rem 0;
 }
                                  /* Нотный стан*/
 .treble-staff {
@@ -131,23 +79,27 @@ h1 {
  display: none;
 }
                                  /* Настройки строк */
-.line {
-   margin: 1.5rem 0 1rem 0;
-   padding: 0;
+.text-lines {
+   margin: 0.5rem 0 0.5rem 0;
 }
+
+.line {
+   line-height: 2;
+}
+
                                  /* Заголовки блоков */
 .section-header {
    line-height: 1;
    text-transform: uppercase;
    font-weight: 700;
    position: absolute;
-   transform: translate(0rem, -1.25rem);
+   transform: translate(0rem, -1.35rem);
    padding: 0rem 1rem;
    background: white;
 }
                                   /* Комментарии блоков */
 .comment {
-   line-height: 1.2rem;
+   line-height: 0.8rem;
    font-size: 0.8rem;
    font-weight: 600;
    color: #00000070;;
@@ -156,34 +108,38 @@ h1 {
                                  /* Аккорды */
 span.chord {
    position: absolute;
-   transform: translate(0rem, -1.2rem);
+   transform: translate(0rem, -0.9rem);
    font-weight: 600;
    color: black;
 }
                                  /* Позиционирование аккордов без слов */
 .INTRO > .text-lines > .line > .chord,
-.INSTRUMENTAL > .text-lines > .line > .chord
+.INSTRUMENTAL > .text-lines > .line > .chord,
+.INTRO > .text-lines > .line,
+.INSTRUMENTAL > .text-lines > .line
    {
    background-color: #ff000000;
    position: relative;
+   margin-top: 0;
+   line-height: 2rem;
 }
                                  /* Настройки блоков */
 .section {
    line-height: 1rem;
    padding: 1rem 1rem 0rem 1rem;
    border: 2px solid #00000050;
-   border-radius: 16px;
+   border-radius: 1rem;
    margin-bottom: 1rem;
    break-inside: avoid;
 }
 
                                  /* сброс отступов сверху у блоков текста*/
-.comment + .text-lines,
+/*.comment + .text-lines,
 .INTRO > .text-lines > .line,
 .INSTRUMENTAL > .text-lines > .line
    {
    margin: 0.5rem 0 1rem 0;
-}
+}*/
                                  /* Колонка */
                        
    .song-wrapper {
@@ -194,71 +150,31 @@ span.chord {
 }
 
 
-                                 /* Параметры страницы на печать */
-@media print {
-   @page {
-    /*size: Letter portrait;
-    margin: 0;*/
-   }
-body {
-   background-color: transparent;
-   max-width: 210mm;
-   font-family: 'Open Sans';
-   margin: 0;
-   padding: 0;
-   margin-left: auto;
-   margin-right: auto;   
-}
-.container,
-.container.song
- {
-   background-color: transparent;
-   border-radius: 0;
-   box-shadow: none;
-   outline: none;
-   padding: 0;
-   padding-top: 0;
-   margin-top: 0;
-   margin-bottom: 0;
-}
-   .song-wrapper {
-   columns: 2;
-   column-gap: 1rem;
-   column-fill: auto;
-   height: auto;
-   }   
-   
-   div.page-settings,
-   .info-block,
-   .header-container
-   {
-      display: none !important; /* скрыть настройки на печати*/
-   }
-}
-
+ 
 
 /* *********************************************** главная станица */ 
 
-.header-container {
-    position: absolute;
-    border: 2px solid #ffffff;
-    left: calc(50% - 4.5rem);
-    top: 1rem;
-    width: 9rem;
-    height: 9rem;
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5rem;
+    width: 100%;
+    box-shadow: 0 2px 7px 1px rgb(0 0 0 / 26%);
+    background: white;
     display: flex;
     align-items: center;
-    background-color: #000000;
-    color: white;
-    border-radius: 5rem;
-    font-weight: 400;
-    box-shadow: 0px 4px 15px 2px rgb(0 0 0 / 48%);
+    justify-content: center;    
+    z-index: 100;
+    /* backdrop-filter: blur(4px); */
+
+
 }
 
 .header-container > h1 {
    margin: auto;
-   font-size: 2rem;
-   font-family: igra sans;
+   font-size: 1.8rem;
+   font-family: "igra sans";
    font-weight: 100;
 }
 
@@ -283,7 +199,14 @@ ul {
     border: 0.1rem solid #ffffff;
     border-radius: 16px;
     box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 16%);
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.song-item:hover {
+   transform: translateY(-3px);
+   box-shadow: 0px 4px 8px 0px rgb(0 0 0 / 14%);
+}
+
 a.song-link {
    text-decoration: none;
    color: #0a0a0a;
@@ -315,8 +238,59 @@ a.song-link {
    text-align: center;
    color: #00000080;
 }
+                                 /* низ, настройки странички */
+.page-settings {
+   margin: 0;
+   display: flex;
+   flex-direction: row;
+}
+
+.toggle-chords-content > svg {
+   min-width: 1.5rem;
+}
+#toggle-chords {
+   min-width: 9rem;
+   text-align: center;
+}
+                                 /* Блок транспонирования */
+div.transpose-controls {
+   margin-left: auto;
+   }
 
 
+button:active {
+ transform: scale(0.95);
+   }
+
+.transpose-controls div {
+   display: inline-block;
+   text-align: center;
+   background-color: var(--light-grey);
+   padding: 1rem 0 1rem 0;
+   min-width: 65px;
+}
+
+button#print {
+   min-width: 6rem;
+}
+
+button#print,
+button.transpose,
+#toggle-chords
+{
+
+ margin: 1rem 0.2rem;
+ padding: 1rem;
+ border: none;
+ background-color: var(--light-grey);
+ transition: all 0.1s linear;
+ font-family: inherit;
+ font-size: 1rem;
+width: 4rem;
+ border: 0.1rem solid #ffffff;
+      border-radius: 1rem;
+    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 16%);
+}
 
 
 
@@ -339,9 +313,9 @@ a.song-link {
     }
 .container {
    margin-top: 7rem;
-      margin-bottom: 3rem;
-   padding: 16px;
-   padding-top: 4rem;
+   margin-bottom: 3rem;
+   padding: 1rem;
+transition-duration: 150ms;
    background-color: #ffffff;
    border-radius: 0px;
 
@@ -353,4 +327,48 @@ a.song-link {
 
 
 
+}
+
+                                /* Параметры страницы на печать */
+@media print {
+   @page {
+    /*size: Letter portrait;
+    margin: 0;*/
+   }
+body {
+   background-color: transparent;
+   max-width: 210mm;
+
+   margin: 0;
+   padding: 0;
+   margin-left: auto;
+   margin-right: auto;   
+}
+.container,
+.container.song
+ {
+   background-color: transparent;
+   border-radius: 0;
+   box-shadow: none;
+   outline: none;
+   padding: 0;
+   padding-top: 0;
+   margin-top: 0;
+   margin-bottom: 0;
+}
+   .song-wrapper {
+   columns: 2;
+   column-gap: 1rem;
+   column-fill: auto;
+   height: auto;
+   }   
+   .title {
+   padding: 0 0 1rem 0;
+}
+   div.page-settings,
+   .info-block,
+   .header
+   {
+      display: none !important; /* скрыть настройки на печати*/
+   }
 }
