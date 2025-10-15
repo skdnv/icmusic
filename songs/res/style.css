@@ -11,9 +11,11 @@
 }
 
 @font-face {
-  font-family: "bezier";
-  src: 
-   url("songs/res/1.ttf");
+  font-family: "igra sans";
+  src: local("Igra Sans");
+   url("IgraSans.woff") format("woff2");
+   url("IgraSans.woff") format("woff")
+   font-weight: normal;
 }
 
 
@@ -161,13 +163,12 @@ span.chord {
     height: 5rem;
     width: 100%;
     box-shadow: 0 2px 7px 1px rgb(0 0 0 / 26%);
-    background: white;
+    background: rgba(255, 255, 255, 0.781);
     display: flex;
     align-items: center;
     justify-content: center;    
     z-index: 100;
-    /* backdrop-filter: blur(4px); */
-
+    backdrop-filter: blur(4px);
 
 }
 
@@ -240,9 +241,10 @@ a.song-link {
 }
                                  /* низ, настройки странички */
 .page-settings {
-   margin: 0;
+   margin: 1rem 0;
    display: flex;
    flex-direction: row;
+   height: 5rem;
 }
 
 .toggle-chords-content > svg {
@@ -255,6 +257,7 @@ a.song-link {
                                  /* Блок транспонирования */
 div.transpose-controls {
    margin-left: auto;
+   white-space: nowrap;
    }
 
 
@@ -279,7 +282,7 @@ button.transpose,
 #toggle-chords
 {
 
- margin: 1rem 0.2rem;
+ margin: 0rem 0.2rem;
  padding: 1rem;
  border: none;
  background-color: var(--light-grey);
@@ -287,6 +290,7 @@ button.transpose,
  font-family: inherit;
  font-size: 1rem;
 width: 4rem;
+height: 4rem;
  border: 0.1rem solid #ffffff;
       border-radius: 1rem;
     box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 16%);
