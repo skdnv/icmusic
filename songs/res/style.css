@@ -25,7 +25,7 @@
                                  /* Body */
 body {
    -webkit-text-size-adjust: none; /* проверить нужно ли*/
-   background-color: rgb(243 244 246);
+
    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
    margin: 0;
    padding: 0px;
@@ -41,7 +41,7 @@ body {
 transition-duration: 150ms;
    background-color: #ffffff;
    border-radius: 0px;
-   box-shadow: 0 2px 7px 1px rgb(0 0 0 / 26%);
+
 }
 .container.index {
 
@@ -205,10 +205,7 @@ ul {
     transition-duration: 200ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.song-item:hover {
-   transform: translateY(-3px);
-   box-shadow: 0px 4px 8px 0px rgb(0 0 0 / 14%);
-}
+
 
 a.song-link {
    text-decoration: none;
@@ -320,7 +317,7 @@ height: 4rem;
    
    body {
         -webkit-text-size-adjust: none;
-
+         background-color: rgb(243 244 246);
     }
 .container {
    margin-top: 7rem;
@@ -335,7 +332,10 @@ transition-duration: 150ms;
    box-shadow: 0 2px 7px 1px rgb(0 0 0 / 26%);
 }
 
-
+.song-item:hover {
+   transform: translateY(-3px);
+   box-shadow: 0px 4px 8px 0px rgb(0 0 0 / 14%);
+}
 
 
 }
